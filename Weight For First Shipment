@@ -1,0 +1,3 @@
+import pandas as pd
+amazon_shipment['earliest']=amazon_shipment.groupby('shipment_id')['shipment_date'].transform("min")
+amazon_shipment.query("shipment_date == earliest")[['shipment_id', 'weight']]
