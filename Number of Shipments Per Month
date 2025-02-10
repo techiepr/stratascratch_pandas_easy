@@ -1,0 +1,4 @@
+import pandas as pd, datetime as dt
+amazon_shipment['unique'] = amazon_shipment['shipment_id'].astype(str)+'-'+amazon_shipment['sub_id'].astype('str')
+amazon_shipment['year_month'] = amazon_shipment['shipment_date'].dt.strftime('%Y-%m')
+amazon_shipment.groupby('year_month').agg(num=('unique','count')).reset_index()
