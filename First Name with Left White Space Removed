@@ -1,0 +1,2 @@
+import pandas as pd
+worker_ws['first_name'].str.lstrip()
