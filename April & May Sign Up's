@@ -1,0 +1,2 @@
+import pandas as pd, datetime as dt
+transactions[transactions["transaction_start_date"].dt.month.isin([4,5])]["signup_id"].drop_duplicates()
