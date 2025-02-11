@@ -1,0 +1,8 @@
+import pandas as pd
+# compute the total weight
+amazon_shipment['total'] = amazon_shipment.groupby('shipment_id')['weight'].transform('sum')
+# remove duplicates
+df_ranked = amazon_shipment[['shipment_id','total']].drop_duplicates()
+df_ranked['ranks'] = df_ranked['total'].rank(method='dense', ascending=False)
+amazon_shipment = amazon_shipment.merge(df_ranked, on=['shipment_id', 'total'], how='left')
+result = amazon_shipment.query("ranks == 3")[["shipment_id", "total"]].drop_duplicates()
