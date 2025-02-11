@@ -1,0 +1,4 @@
+import pandas as pd
+worker_logins['login_timestamp'] = pd.to_datetime(worker_logins['login_timestamp'])
+worker_logins['mins'] = worker_logins.groupby('worker_id')['login_timestamp'].transform('min')
+worker_logins.query("mins == login_timestamp ")
