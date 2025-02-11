@@ -1,0 +1,3 @@
+import pandas as pd
+df = pd.merge(fct_customer_sales, dim_product,how='right',on='prod_sku_id')
+df1 = df.query('cust_id.isnull()')[['prod_sku_name', 'market_name']]
