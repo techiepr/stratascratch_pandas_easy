@@ -1,0 +1,10 @@
+import pandas as pd, datetime as dt
+
+# Ensure order_date is in datetime format
+amazon_sales["order_date"] = pd.to_datetime(amazon_sales["order_date"])
+
+# Extract Year
+amazon_sales["new_date"] = amazon_sales["order_date"].dt.strftime('%Y')
+
+# Get total sum for 2021 orders
+amazon_sales['total_sum'] = amazon_sales.query("new_date == '2021'")['order_total'].sum()
