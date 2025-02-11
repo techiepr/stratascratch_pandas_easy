@@ -1,0 +1,2 @@
+import pandas as pd
+workers = worker.sort_values(by=['first_name','department'], ascending=(True,False))
