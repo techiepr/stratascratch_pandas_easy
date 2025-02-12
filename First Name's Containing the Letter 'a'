@@ -1,0 +1,2 @@
+import pandas as pd
+worker.query("first_name.str.contains('a', case = False)")
