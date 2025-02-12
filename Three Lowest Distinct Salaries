@@ -1,0 +1,3 @@
+import pandas as pd
+worker['ranks'] = worker['salary'].rank(method='dense', ascending=True)
+worker.query("ranks <= 3")['salary'].drop_duplicates()
