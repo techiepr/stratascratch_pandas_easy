@@ -1,0 +1,2 @@
+import pandas as pd, datetime as dt
+worker[worker['joining_date'].dt.strftime('%Y-%m-%d') >= '2014-04-01'].groupby('department')['worker_id'].count().reset_index().rename(columns={"worker_id":"worker_count"})
