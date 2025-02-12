@@ -1,0 +1,2 @@
+import pandas as pd, datetime as dt
+worker[worker['joining_date'].dt.strftime('%Y-%m') == '2014-02']
