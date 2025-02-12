@@ -1,0 +1,4 @@
+import pandas as pd
+result = worker[(worker['salary'] >=  50000) & (worker['salary'] <= 100000)]
+result['fullname'] = result['first_name'] +' '+ result['last_name']
+result[['fullname', 'salary']]
