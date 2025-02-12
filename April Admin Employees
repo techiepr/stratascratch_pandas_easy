@@ -1,0 +1,3 @@
+import pandas as pd, datetime as dt
+result = worker[(worker['department'].str.lower() == ('admin')) & (worker['joining_date'].dt.strftime('%m') >= '04')].count().drop_duplicates()
+result = pd.DataFrame(result, columns=['n_admins'])
