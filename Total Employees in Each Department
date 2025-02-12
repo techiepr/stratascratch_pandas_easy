@@ -1,0 +1,2 @@
+import pandas as pd
+worker.groupby('department')['worker_id'].count().reset_index().rename(columns={'worker_id':'num_worker'})
