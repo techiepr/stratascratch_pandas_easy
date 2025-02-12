@@ -1,0 +1,2 @@
+import pandas as pd
+worker_ws.query("department.str.contains('Admin', case=False)")
