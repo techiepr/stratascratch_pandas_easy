@@ -1,0 +1,6 @@
+import pandas as pd
+import datetime as dt
+
+worker["june_month"] = worker["joining_date"].dt.strftime("%m")
+worker["even_id"] =  worker["worker_id"]%2 == 0
+worker.query("june_month == '06' & even_id == True").drop(columns=["june_month","even_id"])
