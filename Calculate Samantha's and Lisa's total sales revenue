@@ -1,0 +1,4 @@
+import pandas as pd
+df = sales_performance[["sales_revenue", "salesperson"]]
+df1 = df.query("salesperson in ['Samantha','Lisa']")["sales_revenue"].sum()
+return df1
