@@ -1,0 +1,5 @@
+import pandas as pd
+import datetime as dt
+df = sales_data[sales_data['sales_date'].dt.month == 1]
+df['ranks'] = df.groupby('product_category')['total_sales'].rank(method='dense', ascending=False)
+df1 = df[df['ranks'] <= 3][["seller_id","total_sales","product_category","market_place","sales_date"]]
