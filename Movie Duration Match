@@ -1,0 +1,4 @@
+import pandas as pd
+df = pd.merge(entertainment_catalog, flight_schedule, how='cross')
+df1 = df.query("flight_duration >= duration and flight_id == 101")
+return df1[["flight_id","movie_id","duration"]].rename(columns={'duration':'movie_duration'}).drop_duplicates()
