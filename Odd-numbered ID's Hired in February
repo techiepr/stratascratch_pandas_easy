@@ -1,0 +1,6 @@
+import pandas as pd
+import datetime as dt
+
+worker['work_month'] = worker["joining_date"].dt.strftime('%m')
+worker["odd_emp"] = worker["worker_id"]%2 != 0
+return worker.query("work_month == '02' & odd_emp == True").drop(columns=["odd_emp","work_month"])
