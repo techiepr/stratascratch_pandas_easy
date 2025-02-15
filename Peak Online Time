@@ -1,0 +1,7 @@
+import pandas as pd
+import datetime as dt
+df = user_activity
+df['total_time'] = df['start_timestamp'].astype(str) + ' to ' + df['end_timestamp'].astype(str)
+df1 = df[["user_count", 'device_type', "total_time"]]
+df1['ranks'] = df1.groupby('device_type')["user_count"].rank(method='dense', ascending= False)
+df1.query("ranks == 1").drop(columns='ranks')
