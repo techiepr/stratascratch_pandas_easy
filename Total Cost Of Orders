@@ -1,0 +1,4 @@
+import pandas as pd
+df = pd.merge(customers, orders, left_on='id', right_on='cust_id',how='inner')
+df['tt'] = df.groupby('cust_id')["total_order_cost"].transform('sum')
+return df[["cust_id","first_name", "tt"]].sort_values(by='first_name', ascending=True).drop_duplicates().rename(columns={'tt':'total_order_cost'})
