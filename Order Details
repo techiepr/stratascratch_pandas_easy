@@ -1,4 +1,13 @@
 import pandas as pd
+df = customers.merge(orders,left_on='id',right_on='cust_id',how='inner')
+df[(df["first_name"] == "Jill") | (df["first_name"] == "Eva")][["first_name", "order_date", "order_details", "total_order_cost"]].drop_duplicates()
+
+
+
+
+
+
+import pandas as pd
 df = pd.merge(customers,orders,left_on='id',right_on='cust_id',how='inner')
 df1 = df[['cust_id',"order_date","order_details","total_order_cost","first_name"]].sort_values(by="cust_id", ascending=True).drop_duplicates()[["order_date","order_details","total_order_cost","first_name"]]
 return df1.query("first_name in ['Jill','Eva']")
